@@ -1,0 +1,9 @@
+export { HeroSection } from "./HeroSection";
+export { SocialProofBar } from "./SocialProofBar";
+export { PainPointsSection } from "./PainPointsSection";
+export { HowItWorksSection } from "./HowItWorksSection";
+export { FeaturesGrid } from "./FeaturesGrid";
+export { PricingPreview } from "./PricingPreview";
+export { HomepageFAQ } from "./HomepageFAQ";
+export { SEOContentSection } from "./SEOContentSection";
+export { CTASection } from "./CTASection";
