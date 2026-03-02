@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, CheckSquare } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/seo-config";
 
@@ -197,8 +198,14 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2 font-bold text-xl text-primary"
         >
-          <CheckSquare className="h-6 w-6" />
-          <span>ZulieferCheck</span>
+          <Image
+            src="/logo-icon.svg"
+            alt="ZulieferCheck Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto"
+          />
+          <span className="hidden sm:inline">ZulieferCheck</span>
         </Link>
 
         {/* Desktop Navigation */}

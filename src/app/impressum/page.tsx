@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Impressum – ZulieferCheck",
   description: "Impressum von ZulieferCheck gemäß § 5 TMG.",
   alternates: { canonical: `${siteConfig.url}/impressum` },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 };
 
 export default function ImpressumPage() {

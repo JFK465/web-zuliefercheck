@@ -121,24 +121,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.5,
     },
-    {
-      url: `${siteConfig.url}/datenschutz`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${siteConfig.url}/impressum`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${siteConfig.url}/agb`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
   ];
 
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({

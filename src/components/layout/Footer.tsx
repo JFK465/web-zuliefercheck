@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { CheckSquare, Shield, Flag, Lock } from "lucide-react";
+import { Shield, Flag, Lock } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,8 +77,13 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2 font-bold text-lg mb-4"
             >
-              <CheckSquare className="h-5 w-5 text-primary" />
-              <span>ZulieferCheck</span>
+              <Image
+                src="/logo-dark.svg"
+                alt="ZulieferCheck"
+                width={120}
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-background/60 text-sm">
               Zulieferer-Zertifikate automatisch überwachen — Audit-sicher nach
