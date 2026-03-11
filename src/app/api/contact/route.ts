@@ -12,8 +12,7 @@ const contactSchema = z.object({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const data = contactSchema.parse(body);
-    console.log("Kontaktanfrage:", data);
+    contactSchema.parse(body);
     // TODO: E-Mail-Service integrieren
     return NextResponse.json({ success: true });
   } catch (error) {

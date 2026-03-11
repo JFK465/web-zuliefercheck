@@ -8,8 +8,7 @@ const newsletterSchema = z.object({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const data = newsletterSchema.parse(body);
-    console.log("Newsletter-Anmeldung:", data);
+    newsletterSchema.parse(body);
     // TODO: Newsletter-Service integrieren
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -11,8 +11,7 @@ const betaSchema = z.object({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const data = betaSchema.parse(body);
-    console.log("Beta-Registrierung:", data);
+    betaSchema.parse(body);
     // TODO: CRM/E-Mail-Service integrieren
     return NextResponse.json({ success: true });
   } catch (error) {
