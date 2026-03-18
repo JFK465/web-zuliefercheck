@@ -145,7 +145,9 @@ export default function FunktionenPage() {
                     {feature.highlight}
                   </span>
                 </div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
+                <h2 className="font-semibold mb-2 text-base">
+                  {feature.title}
+                </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {feature.description}
                 </p>

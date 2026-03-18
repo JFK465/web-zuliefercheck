@@ -51,6 +51,7 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  aria-label="E-Mail-Adresse für Newsletter"
                   className="bg-background/10 border-background/20 text-background placeholder:text-background/50 flex-1"
                 />
                 <Button

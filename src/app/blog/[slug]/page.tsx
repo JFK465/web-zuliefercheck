@@ -96,9 +96,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
           <div className="mt-10 bg-primary/5 border border-primary/20 rounded-xl p-6">
-            <h3 className="font-semibold mb-2">
+            <h2 className="font-semibold mb-2 text-base">
               ZulieferCheck — Subunternehmer-Zertifikate automatisch überwachen
-            </h3>
+            </h2>
             <p className="text-muted-foreground text-sm mb-4">
               Automatische Ablauf-Erinnerungen, Zulieferer-Portal für
               Selbst-Upload, Audit-Cockpit mit Ampeldarstellung — EN 1090-2
