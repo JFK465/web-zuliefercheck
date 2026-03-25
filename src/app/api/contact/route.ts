@@ -3,11 +3,12 @@ import { z } from "zod";
 import {
   registerContactLead,
   sendContactConfirmEmail,
-} from "@/lib/services/loops";
+  sendContactNotifyAdmin,
+} from "@/lib/services/email-service";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen haben"),
-  email: z.string().email("Ungueltige E-Mail-Adresse"),
+  email: z.string().email("Ungültige E-Mail-Adresse"),
   company: z.string().optional(),
   message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen haben"),
   privacy: z.literal(true),
@@ -25,13 +26,19 @@ export async function POST(request: NextRequest) {
       message: data.message,
     });
 
-    // Send confirmation email (non-blocking)
-    sendContactConfirmEmail({
-      email: data.email,
-      name: data.name,
-    }).catch((error) => {
-      console.error("Failed to send contact confirmation email:", error);
-    });
+    // E-Mails parallel senden und awaiten (Vercel killt die Funktion sonst)
+    await Promise.allSettled([
+      sendContactConfirmEmail({
+        email: data.email,
+        name: data.name,
+      }),
+      sendContactNotifyAdmin({
+        email: data.email,
+        name: data.name,
+        company: data.company,
+        message: data.message,
+      }),
+    ]);
 
     return NextResponse.json({
       success: true,
@@ -45,8 +52,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (error instanceof Error && error.message.includes("LOOPS_API_KEY")) {
-      console.error("Loops API key not configured:", error.message);
+    if (
+      error instanceof Error &&
+      error.message.includes("nicht konfiguriert")
+    ) {
+      console.error("E-Mail-Service nicht konfiguriert:", error.message);
       return NextResponse.json(
         { error: "Service nicht konfiguriert" },
         { status: 500 },
