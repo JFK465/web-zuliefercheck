@@ -121,12 +121,6 @@ function buildEntries(): SitemapEntry[] {
       changefreq: "weekly",
       priority: 0.7,
     },
-    {
-      url: `${siteConfig.url}/kontakt`,
-      lastmod: now,
-      changefreq: "yearly",
-      priority: 0.5,
-    },
   ];
 
   const blogPages: SitemapEntry[] = posts.map((post) => ({
