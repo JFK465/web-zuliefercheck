@@ -9,6 +9,7 @@ const CONTACT_EMAIL = "info@zuliefercheck.de";
 export const metadata: Metadata = {
   title: `Kontakt – ${PRODUCT_NAME} | Wir sind fuer Sie da`,
   description: `Kontaktieren Sie ${PRODUCT_NAME} fuer Fragen, Feedback oder Support. E-Mail: ${CONTACT_EMAIL}. Wir antworten innerhalb von 24 Stunden.`,
+  robots: { index: false, follow: true },
   openGraph: {
     title: `Kontakt – ${PRODUCT_NAME}`,
     description: `Nehmen Sie Kontakt mit uns auf. Wir beraten Sie gerne zu ${PRODUCT_NAME}.`,
