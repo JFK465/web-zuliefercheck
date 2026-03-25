@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "ZulieferCheck",
   description:
     "Nie wieder abgelaufene Zulieferer-Zertifikate beim EN-1090-Audit. Automatische Erinnerungen, Lieferantenportal und Branchenverzeichnis. Jetzt kostenlos testen.",
-  url: "https://zuliefercheck.de",
+  url: "https://lieferantenmanagementsoftware.de",
   ogImage: "/og.png",
   keywords: [
     "Lieferantenmanagement Software Metallbau",
