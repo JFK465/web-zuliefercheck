@@ -7,7 +7,7 @@ import { z } from "zod";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen haben"),
-  email: z.string().email("Bitte geben Sie eine gueltige E-Mail-Adresse ein"),
+  email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
   company: z.string().optional(),
   message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen haben"),
   privacy: z.literal(true),
@@ -71,7 +71,7 @@ export function ContactForm() {
         </div>
         <h3 className="text-xl font-semibold mb-2">Nachricht gesendet!</h3>
         <p className="text-muted-foreground max-w-sm">
-          Vielen Dank fuer Ihre Nachricht. Wir melden uns innerhalb von 24
+          Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 24
           Stunden bei Ihnen.
         </p>
         <button
@@ -138,7 +138,7 @@ export function ContactForm() {
         </label>
         <textarea
           id="message"
-          placeholder="Wie koennen wir Ihnen helfen?"
+          placeholder="Wie können wir Ihnen helfen?"
           rows={5}
           className="flex w-full rounded-lg border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           {...register("message")}
@@ -161,7 +161,7 @@ export function ContactForm() {
         >
           Ich habe die{" "}
           <a href="/datenschutz" className="text-primary hover:underline">
-            Datenschutzerklaerung
+            Datenschutzerklärung
           </a>{" "}
           gelesen und akzeptiere diese. *
         </label>
