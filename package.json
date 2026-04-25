@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "git fetch --unshallow --quiet 2>/dev/null || git fetch --deepen=100 --quiet 2>/dev/null || true; next build",
     "start": "next start",
     "lint": "eslint"
   },
